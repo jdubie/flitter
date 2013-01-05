@@ -2,9 +2,7 @@
 ## CONTROLLERS
 #################################################
 
-App.ApplicationController = Em.Controller.extend
-  currentUser: null
+App.ApplicationController = Em.ArrayController.extend({})
 
-App.ProfileController = Em.ObjectController.extend
-  content: null
-
+#App.HomeController = Em.Controller.extend
+#  companies: [1,2,3]

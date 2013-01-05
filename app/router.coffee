@@ -8,11 +8,12 @@ debug = require('debug') 'DEBUG router'
 
 App.Router.map (match) ->
   match('/').to('home')
-  match('/profile').to('profile')
 
-App.HomeRoute = Em.Route.extend
-  setupControllers: (controller) ->
-    controller.set('posts', App.store.findAll(App.Example))
+  #App.HomeRoute = Em.Route.extend
+  #setupControllers: (controller) ->
+    #  App.store.findQuery(App.Company, q: App.CurrentQuery.query)
+    #controller.set('companies', App.CurrentQuery.result)
+    #App.store.findQuery(App.Company, q: ))
 
 App.ProfileRoute = Em.Route.extend
   setupControllers: (controller) ->

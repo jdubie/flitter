@@ -2,4 +2,4 @@
 ## MODELS
 #################################################
 
-require 'models/example'
+require 'models/company'

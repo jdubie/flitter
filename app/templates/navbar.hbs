@@ -1,23 +1,10 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      {{#linkTo 'home' class='brand'}}LinkLib{{/linkTo}}
-      <div class="pull-right">
-        {{#if App.CurrentUser.loggedIn}}
-         <ul class="nav">
-           <li>{{#linkTo profile App.CurrentUser}}Welcome, {{App.CurrentUser.username}}{{/linkTo}}</li>
-         </ul>
-        {{else}}
-          <ul class="nav">
-            <li>
-            <a {{bindAttr href="App.Bookmarklet.href"}}>
-              Drag button into your bookmark bar to get started
-            </a>
-            </li>
-          </ul>
-          <a class="btn btn-primary" {{bindAttr href="App.Bookmarklet.href"}}>Capture</a>
-        {{/if}}
-      </div>
+      {{#linkTo 'home' class='brand'}}Flitter{{/linkTo}}
+      <form class="navbar-search pull-left">
+        {{view Ember.TextField class="search-query" placeholder="Search Crunchbase instantly" valueBinding="App.CurrentQuery.query"}}
+      </form>
     </div>
   </div>
 </div>
