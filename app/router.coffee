@@ -9,11 +9,14 @@ debug = require('debug') 'DEBUG router'
 App.Router.map (match) ->
   match('/').to('home')
 
-  #App.HomeRoute = Em.Route.extend
+App.HomeRoute = Em.Route.extend
   #setupControllers: (controller) ->
     #  App.store.findQuery(App.Company, q: App.CurrentQuery.query)
     #controller.set('companies', App.CurrentQuery.result)
     #App.store.findQuery(App.Company, q: ))
+  renderTemplates: (context) ->
+    @render()
+    setTimeout((() -> $("#slider").slider range: true, values: [1,80]), 1)
 
 App.ProfileRoute = Em.Route.extend
   setupControllers: (controller) ->

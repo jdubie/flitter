@@ -6,6 +6,7 @@ require 'views'
 require 'router'
 require 'helpers'
 
+
 ##################################################
 ## Create Query object
 ##################################################
