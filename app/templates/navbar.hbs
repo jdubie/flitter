@@ -6,21 +6,16 @@
         {{view Ember.TextField class="search-query" placeholder="Search Crunchbase instantly" valueBinding="App.CurrentQuery.query"}}
       </form>
       <ul class="nav">
-        <li><a>Funding Range</a></li>
+        <li><a>Funding Dates</a></li>
       </u>
-      <div class="span3" style="margin-top:13px">
+      <div class="span4" style="margin-top:13px">
         <div id="slider"></div>
       </div>
       <ul class="nav">
         <li><a></a></li> {{! Spacing }}
         <li>
           <a>
-            {{App.CurrentQuery.startDisplay}}
-          </a>
-        </li>
-        <li>
-          <a>
-            {{App.CurrentQuery.endDisplay}}
+            {{App.CurrentQuery.startDisplay}} - {{App.CurrentQuery.endDisplay}}
           </a>
         </li>
       </ul>
