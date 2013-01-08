@@ -1,4 +1,11 @@
-{{#each c in App.CurrentQuery.result}}
-  <h5>{{c.name}}</h5>
-  <small>{{c.description}}</small>
-{{/each}}
+<div class="media">
+  {{#each App.CurrentQuery.result}}
+    <a class="pull-left" href="#">
+      <img class="media-object" width=64 height=64 {{bindAttr src="image"}}></img>
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">{{name}}</h4>
+      {{description}}
+    </div>
+  {{/each}}
+</div>

@@ -1,23 +1,23 @@
 App = require 'app'
 debug = require('debug') 'DEBUG router'
 
-#App.Route = Em.Router.extend
-#  rootUrl: '/'
-#  enableLogging: true
-#  location: 'history'
-
 App.Router.map (match) ->
   match('/').to('home')
 
 App.HomeRoute = Em.Route.extend
-  #setupControllers: (controller) ->
-    #  App.store.findQuery(App.Company, q: App.CurrentQuery.query)
-    #controller.set('companies', App.CurrentQuery.result)
-    #App.store.findQuery(App.Company, q: ))
   renderTemplates: (context) ->
     @render()
-    setTimeout((() -> $("#slider").slider range: true, values: [1,80]), 1)
 
-App.ProfileRoute = Em.Route.extend
-  setupControllers: (controller) ->
-    controller.set('content', App.CurrentUser)
+    initSlider = () ->
+      $("#slider").slider
+        range: true
+        values: [17,20]
+        max: 20
+        min: 0
+        step: 1
+      $("#slider").bind 'slide', (e, ui) ->
+        [start, end] = ui.values
+        App.CurrentQuery.set('start', start)
+        App.CurrentQuery.set('end',   end)
+
+    setTimeout(initSlider, 1)
